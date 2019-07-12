@@ -1,6 +1,8 @@
+# local myGuys=('▄︻̷┻̿═━一' '▲' '／人 ◕ ‿‿ ◕ 人＼' '☣' '☣' '☠' '❅' '❆' '☂' '۞' 'ﷺ ' 'ﷻ' '𝌳' '𝍊' '𝍋' '𝍌' '𝍍' '𝍎' '𝍏' '𝍐' '𝍑' '𝍒' '𝍓' '𝍔' '𝍕' '𝍖')
+local myGuys=('▄︻̷┻̿═━一' '▲' '／人 ◕ ‿‿ ◕ 人＼' '☣' '☣' '☠' '❅' '❆' '☂' '۞' 'ﷺ ' 'ﷻ' '𝌳' '𝍊' '𝍋' '𝍌' '𝍍' '𝍎' '𝍏' '𝍐' '𝍑' '𝍒' '𝍓' '𝍔' '𝍕' '𝍖')
+local selectedGuy=${myGuys[$RANDOM % ${#myGuys[@]} ]}
 local resetColor="%{$reset_color%}"
-local logo="%{$fg_bold[white]%}▲$resetColor$resetColor"
-local hostname=`hostname`
+local logo="%{$fg_bold[white]%}$selectedGuy$resetColor$resetColor"
 local dir="%{$fg_bold[white]%}%c$resetColor$resetColor"
 
 
@@ -44,4 +46,4 @@ function git_prompt() {
   fi
 
 }
-PROMPT='$logo ($hostname) $dir $(git_prompt)'
+PROMPT='$logo $dir $(git_prompt)'
